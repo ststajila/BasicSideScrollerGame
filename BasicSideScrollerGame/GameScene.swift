@@ -26,6 +26,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         cam.position = ball.position
         pointsCountLabel.position.x = cam.position.x - 300
         pointsCountLabel.position.y = cam.position.y + 60
+        
+        if points == 8{
+            pointsCountLabel.text = "Congrats, You won :)"
+        } else if ball.position.y < -460{
+            ball.physicsBody?.velocity.dy = 0
+            ball.physicsBody?.velocity.dx = 0
+            pointsCountLabel.text = "You Lost :("
+        }
     }
     
     func didBegin(_ contact: SKPhysicsContact) {

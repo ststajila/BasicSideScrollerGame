@@ -48,16 +48,20 @@ class GameViewController: UIViewController {
     
     @IBAction func moveRight(_ sender: Any) {
     
-        play.ball.position.x = play.ball.position.x + 10
+        play.ball.position.x = play.ball.position.x + 50
         
     }
     
     @IBAction func moveLeft(_ sender: Any) {
-        play.ball.position.x = play.ball.position.x - 10
+        play.ball.position.x = play.ball.position.x - 50
     }
     
     @IBAction func moveUp(_ sender: Any) {
-        play.ball.position.y = play.ball.position.y + 200
+        var launch = SKAction.move(by: CGVector(dx: 0, dy: 500), duration: 0.0)
+        play.ball.run(launch)
     }
     
+    @IBAction func restart(_ sender: Any) {
+        
+    }
 }
