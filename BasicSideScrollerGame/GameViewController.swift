@@ -62,6 +62,6 @@ class GameViewController: UIViewController {
     }
     
     @IBAction func restart(_ sender: Any) {
-        
+        viewDidLoad()
     }
 }
